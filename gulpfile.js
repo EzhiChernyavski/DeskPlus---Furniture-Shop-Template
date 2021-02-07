@@ -4,7 +4,7 @@ const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
 const uglify = require('gulp-uglify-es').default;
 const autoprefixer = require('gulp-autoprefixer');
-const imagemin = require('gulp-iamgemin');
+const imagemin = require('gulp-imagemin');
 const del = require('del');
 
 function browsersync() {
@@ -20,18 +20,20 @@ function clianDist() {
 };
 
 function images() {
-  return src('app/images/*')
-  .pipe(imagemin([
-    imagemin.gifsicle({interlaced: true}),
-    imagemin.mozjpeg({quality: 75, progressive: true}),
-    imagemin.optipng({optimizationLevel: 5}),
-    imagemin.svgo({
-        plugins: [
-            {removeViewBox: true},
-            {cleanupIDs: false}
+  return src('app/images/**/*')
+  .pipe(imagemin(
+    [
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.mozjpeg({quality: 75, progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.svgo({
+          plugins: [
+              {removeViewBox: true},
+              {cleanupIDs: false}
           ]
       })
-  ]))
+    ]
+  ))
   .pipe(dest('dist/images'))
 };
 
@@ -70,6 +72,7 @@ function build() {
 function watching() {
   watch(['app/scss/**/*.scss'], styles);
   watch(['app/js/main.js','!app/js/main.min.js'], scripts);
+  watch(['app/images/**/*'], images);
   watch(['app/*.html']).on('change', browserSync.reload);
 };
 
@@ -82,5 +85,5 @@ exports.clianDist = clianDist;
 
 
 
-exports.build = series(clianDist,images, build);
+exports.build = series(clianDist, images, build);
 exports.default = parallel(styles, scripts, browsersync, watching);
