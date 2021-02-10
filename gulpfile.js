@@ -48,7 +48,7 @@ function scripts() {
 };
 
 function styles() {
-  return src('app/scss/style.scss')
+  return src('app/scss/**/*.scss')
   .pipe(scss({outputStyle: 'compressed'}))
   .pipe(concat('style.min.css'))
   .pipe(autoprefixer({
@@ -71,7 +71,7 @@ function build() {
 
 function watching() {
   watch(['app/scss/**/*.scss'], styles);
-  watch(['app/js/main.js','!app/js/main.min.js'], scripts);
+  watch(['app/js/**/*.js','!app/js/main.min.js'], scripts);
   watch(['app/images/**/*'], images);
   watch(['app/*.html']).on('change', browserSync.reload);
 };
