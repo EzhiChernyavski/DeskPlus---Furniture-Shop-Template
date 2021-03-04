@@ -1,49 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="images/favicon/site.webmanifest">
-  <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <title>DeskPlus - Furniture Shop Template</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="images/favicon/site.webmanifest">
+	<link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+	<title>DeskPlus - Furniture Shop Template</title>
 </head>
 <body>
-  <!--Header-->
-  <header>
-    <nav>
-      <div class="logo-wrapper">
-        <a href="index.html">
-          <img src="images/Logo.svg" alt="Logo DeskPlus">
-        </a>
-      </div>
-      <div class="link-wrapper">
-        <a href="#">Showroom</a>
-        <a href="#">Product</a>
-        <form action="#/contact" target="_blank">
-          <button type="submit"></button>
-        </form>
-      </div>
-    </nav>
-    <section class="home-screen">
-      <h1>
-        Good Living<!--Не разрывный перенос -->Better LIVE
-      </h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam aliquam diam dictum mattis.</p>
-      <form>
-        <input placeholder="Enter product name">
-        <buttom>Search</buttom>
-      </form>
-    </section>
-  </header>
-  <!--Header end-->
+	<!--Header-->
+	<header>
+		<nav>
+			<div class="logo-wrapper">
+				<a href="index.html">
+					<img src="images/Logo.svg" alt="Logo DeskPlus">
+				</a>
+			</div>
+			<div class="link-wrapper">
+				<a href="#">Showroom</a>
+				<a href="#">Product</a>
+				<form action="#/contact" target="_blank">
+					<button>contact us</button>
+				</form>
+			</div>
+		</nav>
+		<section class="home-screen">
+			<div class="home-class__wrapper">
+				<h1>Good Living Better LIVE</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam aliquam diam dictum mattis.</p>
+				<form>
+					<input type="text" class="input-search" placeholder="Enter product name">
+					<buttom class="button-search" type="submit">Search</buttom>
+				</form>
+			</div>
+		</section>
+	</header>
+	<!--Header end-->
 
+	<section class="kits">
+		<h2>Our Fave Kits</h2>
+		<div class="kits__list">
+			<div class="kits__item">
+				<img src="images/chair.jpg" alt="chair">
+				<p class="sale">Sale</p>
+				<div class="kits__item-title">
+					<h4>White Swan Chair</h4>
+					<p>$69.99</p>
+				</div>
+			</div>
+			<div class="kits__item center" >
+				<img src="images/sofa.jpg" alt="sofa">
+				<div class="kits__item-title">
+					<h4>Urban sofa set</h4>
+					<p>$569</p>
+				</div>
+			</div>
+			<div class="kits__item">
+				<img src="images/kitchen.jpg" alt="kitchen">
+				<p class="sale">Sale</p>
+				<div class="kits__item-title">
+					<h4>Big  Mono • Kitchen set</h4>
+					<p>$569</p>
+				</div>
+			</div> 
+		</div>
+	</section>
 
-  <script src="js/main.min.js"></script>
+	<script src="js/main.min.js"></script>
 </body>
 </html>
